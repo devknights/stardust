@@ -19,5 +19,5 @@ Thumbs.db
 *.sublime-*
 
 node_modules/
-dist/
+public/dist/
 *.map
