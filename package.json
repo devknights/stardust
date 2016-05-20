@@ -4,7 +4,10 @@
   "description": "A simple site that displays media from a user's profile, as well as allowing them to search for media via hashtag.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "npm prune | npm i",
+    "build:scss": "node ./_npm-scripts/build-scss.js -c",
+    "watch": "node ./_npm-scripts/watch.js"
   },
   "engines": {
     "node": "6.1.0",
@@ -20,8 +23,24 @@
     "url": "https://github.com/devknights/stardust/issues"
   },
   "homepage": "https://github.com/devknights/stardust#readme",
+  "config": {
+    "webroot": "/",
+    "scss": {
+      "srcDir": "public/src/scss/",
+      "distDir": "public/dist/css/",
+      "srcFile": "kickoff.scss",
+      "distFile": "app.css",
+      "sourceMap": "app.css.map"
+    }
+  },
   "dependencies": {
     "express": "^4.13.4",
     "instagram-node": "^0.5.8"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "cssnano": "^3.6.2",
+    "gaze": "^1.0.0",
+    "postscss": "^1.4.1"
   }
 }
