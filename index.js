@@ -1,12 +1,13 @@
-var express = require('express');
-var app = express();
+'use strict';
 
-app.set('view engine', 'jade');
+var _express = require('express');
+var _app = _express();
+var _rootPath = __dirname;
 
-app.get('/', function (req, res) {
-  res.render('index');
-});
+_app.set('view engine', 'jade');
 
-app.listen(process.env.PORT || 3000, function () {
+require('./routes')(_app, _rootPath);
+
+_app.listen(process.env.PORT || 3000, function () {
   console.log('Example app running!');
 });

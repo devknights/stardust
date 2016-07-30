@@ -1,3 +1,5 @@
+'use strict';
+
 var config = require('../package').config;
 var scss = require('./build-scss');
 var gaze = require('gaze');

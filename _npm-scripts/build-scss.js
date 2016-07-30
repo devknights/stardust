@@ -1,3 +1,5 @@
+'use strict';
+
 var config = require('../package').config;
 var autoprefixer = require('autoprefixer');
 var postscss = require('postscss');
@@ -20,4 +22,4 @@ if (process) {
 
 module.exports = {
   compile: compile
-}
+};
